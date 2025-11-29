@@ -180,7 +180,96 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="mt-16 max-w-3xl mx-auto">
+          <div className="mt-16 max-w-6xl mx-auto">
+            <h3 className="text-2xl font-bold mb-6 text-center">Интерактивная карта села</h3>
+            <Card className="mb-12 overflow-hidden">
+              <CardContent className="p-0">
+                <div className="relative bg-muted/30 h-[500px] flex items-center justify-center">
+                  <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-4 p-8">
+                    <div className="col-start-2 row-start-1 flex justify-center">
+                      <button className="group relative">
+                        <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <Icon name="Church" size={32} className="text-accent-foreground" />
+                        </div>
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-primary-foreground px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                          Церковь Вознесения
+                        </div>
+                      </button>
+                    </div>
+
+                    <div className="col-start-1 row-start-2 flex items-center">
+                      <button className="group relative">
+                        <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <Icon name="Home" size={28} className="text-secondary-foreground" />
+                        </div>
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-primary-foreground px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                          Купеческие дома
+                        </div>
+                      </button>
+                    </div>
+
+                    <div className="col-start-2 row-start-2 flex items-center justify-center">
+                      <div className="text-center">
+                        <Icon name="MapPin" size={40} className="text-primary mx-auto mb-2" />
+                        <p className="text-sm font-semibold">Центральная площадь</p>
+                      </div>
+                    </div>
+
+                    <div className="col-start-3 row-start-2 flex items-center justify-end">
+                      <button className="group relative">
+                        <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <Icon name="TreePine" size={28} className="text-secondary-foreground" />
+                        </div>
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-primary-foreground px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                          Музей истории
+                        </div>
+                      </button>
+                    </div>
+
+                    <div className="col-start-2 row-start-3 flex justify-center items-end">
+                      <button className="group relative">
+                        <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <Icon name="Landmark" size={24} className="text-muted-foreground" />
+                        </div>
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-primary-foreground px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                          Старинная усадьба
+                        </div>
+                      </button>
+                    </div>
+
+                    <div className="col-start-1 row-start-1 flex items-start">
+                      <button className="group relative">
+                        <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <Icon name="Coffee" size={24} className="text-muted-foreground" />
+                        </div>
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-primary-foreground px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                          Кафе "Трапезная"
+                        </div>
+                      </button>
+                    </div>
+
+                    <div className="col-start-3 row-start-3 flex items-end justify-end">
+                      <button className="group relative">
+                        <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                          <Icon name="Hotel" size={24} className="text-muted-foreground" />
+                        </div>
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primary text-primary-foreground px-3 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                          Гостевой дом
+                        </div>
+                      </button>
+                    </div>
+                  </div>
+                  
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{zIndex: 0}}>
+                    <line x1="33%" y1="20%" x2="33%" y2="50%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
+                    <line x1="33%" y1="50%" x2="15%" y2="50%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
+                    <line x1="33%" y1="50%" x2="66%" y2="50%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
+                    <line x1="33%" y1="50%" x2="33%" y2="80%" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="5,5" />
+                  </svg>
+                </div>
+              </CardContent>
+            </Card>
+
             <h3 className="text-2xl font-bold mb-6 text-center">Экскурсионные маршруты</h3>
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="route1">
