@@ -4,6 +4,20 @@ import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
+const Ornament = ({ className = "" }: { className?: string }) => (
+  <div className={`flex items-center justify-center gap-2 ${className}`}>
+    <svg width="80" height="20" viewBox="0 0 80 20" fill="none" className="text-accent">
+      <path d="M40 2C42 2 44 4 44 6C44 8 42 10 40 10C38 10 36 8 36 6C36 4 38 2 40 2Z" fill="currentColor" opacity="0.6"/>
+      <path d="M30 6C31 6 32 7 32 8C32 9 31 10 30 10C29 10 28 9 28 8C28 7 29 6 30 6Z" fill="currentColor" opacity="0.4"/>
+      <path d="M50 6C51 6 52 7 52 8C52 9 51 10 50 10C49 10 48 9 48 8C48 7 49 6 50 6Z" fill="currentColor" opacity="0.4"/>
+      <path d="M20 10C21 10 22 11 22 12C22 13 21 14 20 14C19 14 18 13 18 12C18 11 19 10 20 10Z" fill="currentColor" opacity="0.3"/>
+      <path d="M60 10C61 10 62 11 62 12C62 13 61 14 60 14C59 14 58 13 58 12C58 11 59 10 60 10Z" fill="currentColor" opacity="0.3"/>
+      <path d="M10 14C10.5 14 11 14.5 11 15C11 15.5 10.5 16 10 16C9.5 16 9 15.5 9 15C9 14.5 9.5 14 10 14Z" fill="currentColor" opacity="0.2"/>
+      <path d="M70 14C70.5 14 71 14.5 71 15C71 15.5 70.5 16 70 16C69.5 16 69 15.5 69 15C69 14.5 69.5 14 70 14Z" fill="currentColor" opacity="0.2"/>
+    </svg>
+  </div>
+);
+
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
 
@@ -59,7 +73,9 @@ const Index = () => {
         }}
       >
         <div className="text-center text-white animate-fade-in px-4">
+          <Ornament className="mb-6" />
           <h2 className="text-5xl md:text-7xl font-bold mb-6">Маминское</h2>
+          <Ornament className="mb-8" />
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
             Старинное уральское село с богатой историей и живописной архитектурой
           </p>
@@ -72,10 +88,20 @@ const Index = () => {
 
       <section id="history" className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 animate-fade-in">История села</h2>
+          <div className="text-center mb-12 animate-fade-in">
+            <Ornament className="mb-4" />
+            <h2 className="text-4xl font-bold">История села</h2>
+            <Ornament className="mt-4" />
+          </div>
           <div className="max-w-4xl mx-auto space-y-8">
-            <Card className="animate-fade-in">
-              <CardContent className="p-8">
+            <Card className="animate-fade-in border-2 border-accent/20 shadow-lg">
+              <CardContent className="p-8 relative">
+                <div className="absolute top-4 right-4 opacity-10">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <circle cx="30" cy="30" r="25" stroke="currentColor" strokeWidth="2" className="text-accent"/>
+                    <path d="M20 30 L30 20 L40 30 L30 40 Z" fill="currentColor" className="text-accent"/>
+                  </svg>
+                </div>
                 <div className="flex items-start gap-4">
                   <Icon name="Calendar" size={32} className="text-primary flex-shrink-0 mt-1" />
                   <div>
@@ -90,8 +116,14 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="animate-fade-in">
-              <CardContent className="p-8">
+            <Card className="animate-fade-in border-2 border-accent/20 shadow-lg">
+              <CardContent className="p-8 relative">
+                <div className="absolute top-4 right-4 opacity-10">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <rect x="15" y="15" width="30" height="30" stroke="currentColor" strokeWidth="2" className="text-accent"/>
+                    <circle cx="30" cy="30" r="10" fill="currentColor" className="text-accent"/>
+                  </svg>
+                </div>
                 <div className="flex items-start gap-4">
                   <Icon name="Building2" size={32} className="text-primary flex-shrink-0 mt-1" />
                   <div>
@@ -106,8 +138,13 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="animate-fade-in">
-              <CardContent className="p-8">
+            <Card className="animate-fade-in border-2 border-accent/20 shadow-lg">
+              <CardContent className="p-8 relative">
+                <div className="absolute top-4 right-4 opacity-10">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                    <path d="M30 10 L40 25 L55 30 L40 35 L30 50 L20 35 L5 30 L20 25 Z" stroke="currentColor" strokeWidth="2" className="text-accent"/>
+                  </svg>
+                </div>
                 <div className="flex items-start gap-4">
                   <Icon name="Landmark" size={32} className="text-primary flex-shrink-0 mt-1" />
                   <div>
@@ -127,7 +164,11 @@ const Index = () => {
 
       <section id="sights" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Достопримечательности</h2>
+          <div className="text-center mb-12">
+            <Ornament className="mb-4" />
+            <h2 className="text-4xl font-bold">Достопримечательности</h2>
+            <Ornament className="mt-4" />
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="overflow-hidden hover:shadow-xl transition-shadow animate-fade-in">
               <div className="h-64 bg-cover bg-center" style={{backgroundImage: `url('https://cdn.poehali.dev/projects/2a717c4c-cc69-4f29-a7a0-207d8b20ff63/files/37892f12-9e9d-47da-b6fe-f40f3b343687.jpg')`}} />
@@ -379,7 +420,11 @@ const Index = () => {
 
       <section id="gallery" className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Галерея</h2>
+          <div className="text-center mb-12">
+            <Ornament className="mb-4" />
+            <h2 className="text-4xl font-bold">Галерея</h2>
+            <Ornament className="mt-4" />
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               'https://cdn.poehali.dev/projects/2a717c4c-cc69-4f29-a7a0-207d8b20ff63/files/2f8d8b72-10fb-423d-ac73-0900d3ec414c.jpg',
@@ -401,7 +446,11 @@ const Index = () => {
 
       <section id="info" className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Практическая информация</h2>
+          <div className="text-center mb-12">
+            <Ornament className="mb-4" />
+            <h2 className="text-4xl font-bold">Практическая информация</h2>
+            <Ornament className="mt-4" />
+          </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="animate-fade-in">
               <CardContent className="p-8">
@@ -487,7 +536,11 @@ const Index = () => {
 
       <section id="contacts" className="py-20 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Контакты</h2>
+          <div className="text-center mb-12">
+            <Ornament className="mb-4" />
+            <h2 className="text-4xl font-bold">Контакты</h2>
+            <Ornament className="mt-4" />
+          </div>
           <div className="max-w-2xl mx-auto">
             <Card className="animate-fade-in">
               <CardContent className="p-8">
